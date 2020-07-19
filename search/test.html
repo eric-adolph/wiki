@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CS50 Advanced Search</title>
+        <link rel="stylesheet" type="text/css" href="style.css"> <!-- my own css file-->
+        <link rel="stylesheet" type="text/css" href="google.css"> <!--partial css copy and paste from Google site to help with Advanced form-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+        <script>
+            function advancedSearch()
+            {
+                url = "https://www.google.com/search?as_q=";
+                q = document.search.q.value;                
+                n = document.search.none.value;
+                e = document.search.exact.value;
+                a = document.search.any.value
+                
+                url = url.concat(q, "&as_eq=", n, "&as_epq=", e, "&as_oq=", a);
+
+                url = url.replace(" ","+");
+                
+                alert(url)
+
+                window.location.href = url;                
+            }
+        </script>
+
+    </head>
+    <body>
+        <div class="gb_h">
+            <a class="gb_g" href="index.html">CS50 Search</a>
+            <a class="gb_g" href="image-search.html">CS50 Image Search</a>
+        </div>
+        <hr />  
+        <br />  
+        <div class="center">  
+            <!-- image found on th web-->
+            <img src="cs50-search.gif" alt="CS50 Search: Search the Web" />                               
+        </div>
+        <form name = "search" action="https://google.com/search">
+
+            <div class="appbar"> <label style="margin-left:10px"> Advanced Search</label>   </div> 
+            
+            <div id="container">
+                <div id="row">
+                    <div id="left">
+                        <div class="lOTAE"> <span>Find pages with...</span>   </div>
+                    </div>
+                    <div id="middle">
+                        <div></div>
+                    </div>
+                    <div id="right">
+                        <div class="lOTAE"> To do this in the search box</div> 
+                    </div>
+                </div> <!-- end row -->
+
+                <div id="row">
+                    <div id="left">
+                        <div class="lOTAE"> <label for="xX4UFf"> all these words:</label>   </div>                       
+                    </div>
+                    <div id="middle">
+                        <div class="PLLUQc"> <input class="jfk-textinput" value="" autofocus="autofocus" id="q" name="q" type="text"> </div>
+                    </div>
+                    <div id="right">
+                        <div class="lOTAE"> Type the important words:  <span class="BFlQMb"> tricolor rat terrier</span>   </div> 
+                    </div>
+                </div> <!-- end row -->
+
+            </div> <!-- end container-->
+
+                
+            <div  style="padding-top: 10px;">                
+                <input class="btn btn-primary" type="button" value="Advanced Search" name="search" onclick="advancedSearch()">
+            </div>
+                
+        </form>
+    </body>
+</html>

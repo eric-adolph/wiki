@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CS50 Advanced Search</title>
+        <link rel="stylesheet" type="text/css" href="style.css"> 
+        
+        <script>
+            function advancedSearch()
+            {
+                url = "https://www.google.com/search?as_q=";
+                q = document.search.q.value;                
+                n = document.search.none.value;
+                e = document.search.exact.value;
+                a = document.search.any.value
+                
+                url = url.concat(q, "&as_eq=", n, "&as_epq=", e, "&as_oq=", a);
+
+                url = url.replace(" ","+");
+                
+                window.location.href = url;                
+            }
+        </script>
+
+    </head>
+    <body>
+        <div class="page-header">
+            <a class="page-header-links" href="index.html">CS50 Search</a>
+            <a class="page-header-links" href="image-search.html">CS50 Image Search</a>
+        </div>
+        <hr />  
+        <br />  
+        <div class="center">  
+            <!-- image found on th web-->
+            <img src="cs50-search.gif" alt="CS50 Search: Search the Web" />                               
+        </div>
+        <form name = "search" action="https://google.com/search">
+
+            <div class="title"> <label style="margin-left:10px"> Advanced Search</label>   </div> 
+            <br />
+            <div id="container">
+                <div id="row">
+                    <div id="left">
+                        <span class="div-table-header">Find pages with...</span>
+                    </div>
+                    <div id="middle">
+                        <div></div>
+                    </div>
+                    <div id="right">
+                        <span class="div-table-header">To do this in the search box</span>
+                    </div>
+                </div> <!-- end row -->
+                <br /><br />
+                <div id="row">
+                    <div id="left">
+                        <label class="div-table-label"></span> all these words:</label>                       
+                    </div>
+                    <div id="middle">
+                        <div class="PLLUQc"> <input class="input-text" value="" autofocus="autofocus" id="q" name="q" type="text"> </div>
+                    </div>
+                    <div id="right">
+                        <span class="div-table-description">Type the important words:</span> <span class="div-table-example">tricolor rat terrier</span> 
+                    </div>
+                </div> <!-- end row -->
+
+                <div id="row">
+                    <div id="left">
+                        <label class="div-table-label">this exact word or phrase:</label>
+                    </div>
+                    <div id="middle">
+                        <div class="PLLUQc"> <input class="input-text" value="" id="exact" name="exact" type="text"> </div> 
+                    </div>
+                    <div id="right">
+                        <span class="div-table-description">Put exact words in quotes:</span> <span class="div-table-example">&quot;rat terrier&quot;</span>  
+                    </div>
+                </div> <!-- end row -->
+
+                <div id="row">
+                    <div id="left">
+                        <label class="div-table-label">any of these words:</label>
+                    </div>
+                    <div id="middle">
+                        <div class="PLLUQc"> <input class="input-text" value="" id="any" name="any" type="text"> </div>
+                    </div>
+                    <div id="right">
+                        <span class="div-table-description">Type</span> <span class="div-table-example">OR</span> <span class="div-table-description">between all the words you want:</span>  <span class="div-table-example">miniature OR standard</span>
+                    </div>
+                </div> <!-- end row -->
+
+                <div id="row">
+                    <div id="left">
+                        <label class="div-table-label">none of these words:</label>
+                    </div>
+                    <div id="middle">
+                        <div class="PLLUQc"> <input class="input-text" value="" id="none" name="none" type="text"> </div>
+                    </div>
+                    <div id="right">
+                        <span class="div-table-description">Put a minus sign just before words you don't want:</span>  <span class="div-table-example"> -rodent, -&quot;Jack Russell&quot;</span> 
+                    </div>
+                </div> <!-- end row -->
+                <br />
+                <div id="row">
+                    <div id ="left">
+                        <div  style="padding-top: 10px;">                
+                            <input class="advanced-button" type="button" value="Advanced Search" name="search" onclick="advancedSearch()">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div> <!-- end container-->
+
+                
+            
+                
+        </form>
+    </body>
+</html>

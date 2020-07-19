@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CS50 Search</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script>
+            function feelingLucky()
+            {
+                url = "https://www.google.com/search?q=";
+                q = document.search.q.value;
+                l = "&btnI=I%27m+Feeling+Lucky";
+                
+                url = url.concat(q, l)
+
+                window.location.href = url;
+            }
+        </script>
+
+    </head>
+    <body>
+        <div class="page-header">
+            <a class="page-header-links" href="image-search.html">CS50 Image Search</a>
+            <a class="page-header-links" href="advanced-search.html">CS50 Advanced Search</a>
+        </div>
+        <hr />  
+        <br />  
+        <div class="center">  
+            <!-- image found on th web-->
+            <img src="cs50-search.gif" alt="CS50 Search: Search the Web" />
+                     
+            <form name="search" action="https://google.com/search">
+                <div class="center">
+                    <input class ="rcorners" type="text" name="q" placeholder="Enter Search Phrase">
+                </div>
+                <div class="center" style="padding-top: 10px;">
+                    <input class = "search-button" type="submit" value="CS50 Search" name="search">
+                    <input class = "search-button" type="button" value="I'm Feelng Lucky!" name="lucky" onclick="feelingLucky()">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
